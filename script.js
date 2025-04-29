@@ -1,14 +1,45 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Theme Toggle
-    const themeSwitch = document.querySelector('.theme-switch');
-    const themeSwitchHandle = document.querySelector('.theme-switch-handle');
-    themeSwitch.addEventListener('click', function () {
-        document.body.classList.toggle('dark-mode');
-        if (document.body.classList.contains('dark-mode')) {
-            themeSwitchHandle.innerHTML = '<i class="ri-moon-line ri-sm"></i>';
-        } else {
-            themeSwitchHandle.innerHTML = '<i class="ri-sun-line ri-sm"></i>';
+const themeSwitch = document.querySelector('.theme-switch');
+const themeSwitchHandle = document.querySelector('.theme-switch-handle');
+themeSwitch.addEventListener('click', function () {
+    document.body.classList.toggle('dark-mode');
+    
+    // Add/remove particles based on dark mode
+    if (document.body.classList.contains('dark-mode')) {
+        themeSwitchHandle.innerHTML = '<i class="ri-moon-line ri-sm"></i>';
+        // Create particles
+        const particles = document.createElement('div');
+        particles.className = 'floating-particles';
+        for (let i = 0; i < 7; i++) {
+            particles.innerHTML += '<div class="particle"></div>';
         }
+        document.body.appendChild(particles);
+    } else {
+        themeSwitchHandle.innerHTML = '<i class="ri-sun-line ri-sm"></i>';
+        // Remove particles
+        const particles = document.querySelector('.floating-particles');
+        if (particles) {
+            particles.remove();
+        }
+    }
+    
+    // Save theme preference to localStorage
+    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+});
+
+// Check for saved theme preference on page load
+if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+    themeSwitchHandle.innerHTML = '<i class="ri-moon-line ri-sm"></i>';
+    // Create particles if dark mode is enabled
+    const particles = document.createElement('div');
+    particles.className = 'floating-particles';
+    for (let i = 0; i < 7; i++) {
+        particles.innerHTML += '<div class="particle"></div>';
+    }
+    document.body.appendChild(particles);
+}
     });
     // Mobile Menu Toggle
     const menuToggle = document.querySelector('.menu-toggle');
@@ -103,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(type, typingDelay);
     }
     setTimeout(type, 1000);
-});
+
 document.addEventListener('DOMContentLoaded', function () {
     // About Tabs
     const aboutTabs = document.querySelectorAll('.about-tab');
