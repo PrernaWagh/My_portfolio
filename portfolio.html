@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prerna Wagh - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#ff6b6b', secondary: '#6c63ff' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="custom-cursor"></div>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container flex items-center justify-between h-[90px]">
+            <a href="#" class="text-2xl font-bold font-['Playfair_Display']">Prerna<span
+                    class="text-primary">Wagh</span></a>
+            <div class="hidden md:flex items-center space-x-8 navbar-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#certifications" class="nav-link">Certifications</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="theme-switch">
+                    <div class="theme-switch-handle">
+                        <i class="ri-sun-line ri-sm"></i>
+                    </div>
+                </div>
+                <button class="md:hidden w-10 h-10 flex items-center justify-center menu-toggle">
+                    <i class="ri-menu-line ri-2x"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Mobile Menu -->
+    <div class="navbar-menu md:hidden"></div>
+    <!-- Hero Section -->
+    <section id="home" class="hero flex items-center">
+        <div class="hero-shapes">
+            <div class="hero-shape"></div>
+            <div class="hero-shape"></div>
+            <div class="hero-shape"></div>
+        </div>
+        <div class="container">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <p class="text-primary mb-2">Hello, I'm</p>
+                    <h1 class="text-4xl md:text-6xl mb-4">Prerna Wagh</h1>
+                    <h2 class="text-2xl md:text-3xl mb-6 text-text-light typing-text">Full Stack Developer</h2>
+                    <p class="mb-8 text-text-light max-w-md">Specialized in front-end as well as back-end technologies
+                        and have ability to turn ideas into reality.</p>
+                    <div class="flex space-x-4 mb-10">
+                        <a href="#contact"
+                            class="px-6 py-3 bg-primary text-white !rounded-button hover:bg-primary-dark transition-all whitespace-nowrap">Hire
+                            Me</a>
+                        <a href="#projects"
+                            class="px-6 py-3 border border-primary text-primary !rounded-button hover:bg-primary hover:text-white transition-all whitespace-nowrap">View
+                            Work</a>
+                    </div>
+                    <div class="flex space-x-6">
+                        <a href="#" class="social-icon w-10 h-10 flex items-center justify-center">
+                            <i class="ri-github-fill ri-xl"></i>
+                        </a>
+                        <a href="#" class="social-icon w-10 h-10 flex items-center justify-center">
+                            <i class="ri-linkedin-fill ri-xl"></i>
+                        </a>
+                        <a href="#" class="social-icon w-10 h-10 flex items-center justify-center">
+                            <i class="ri-twitter-fill ri-xl"></i>
+                        </a>
+                        <a href="#" class="social-icon w-10 h-10 flex items-center justify-center">
+                            <i class="ri-dribbble-fill ri-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div
+                        class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                        <img src="https://readdy.ai/api/search-image?query=professional%20portrait%20of%20a%20young%20male%20developer%20with%20short%20dark%20hair%2C%20wearing%20a%20modern%20casual%20outfit%2C%20looking%20confident%2C%20high%20quality%20studio%20lighting%2C%20professional%20headshot%2C%20on%20a%20simple%20light%20gradient%20background&width=400&height=400&seq=1&orientation=squarish"
+                            alt="Prerna Wagh" class="w-full h-full object-cover object-top">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="scroll-down w-10 h-10 flex items-center justify-center">
+            <i class="ri-arrow-down-line ri-xl"></i>
+        </a>
+    </section>
+    <!-- About Section -->
+    <section id="about" class="py-20 w-full">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl md:text-4xl mb-16 text-center">About Me</h2>
+            <div class="w-full">
+                <div class="w-full">
+                    <p class="mb-8 text-text-light text-center max-w-2xl mx-auto">
+                        I'm a passionate Full Stack Developer specializing in building dynamic and responsive
+                        web applications that combine great design with strong functionality. I'm committed to
+                        continuous learning and building solutions that make a real impact.
+                    </p>
+                    <div class="mb-8">
+                        <div class="flex justify-center space-x-6 border-b border-gray-200">
+                            <button class="about-tab active py-3 px-4" data-tab="skills">Skills</button>
+                            <button class="about-tab py-3 px-4" data-tab="journey">Journey</button>
+                            <button class="about-tab py-3 px-4" data-tab="education">Education</button>
+                            <button class="about-tab py-3 px-4" data-tab="values">Values</button>
+                        </div>
+                        <div class="about-content active pt-8" id="skills">
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                <!-- Frontend Skills -->
+                                <div class="skill-category">
+                                    <h3 class="text-xl font-semibold mb-4 text-center pb-2 border-b-2 border-primary">
+                                        Frontend</h3>
+                                    <div class="mb-6">
+                                        <div class="flex justify-between mb-2">
+                                            <span>HTML/CSS</span>
+                                            <span>90%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" data-width="90%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-6">
+                                        <div class="flex justify-between mb-2">
+                                            <span>JavaScript</span>
+                                            <span>85%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" data-width="85%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-6">
+                                        <div class="flex justify-between mb-2">
+                                            <span>React</span>
+                                            <span>85%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" data-width="85%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Backend Skills -->
+                                <div class="skill-category">
+                                    <h3 class="text-xl font-semibold mb-4 text-center pb-2 border-b-2 border-primary">
+                                        Backend</h3>
+                                    <div class="mb-6">
+                                        <div class="flex justify-between mb-2">
+                                            <span>Node.js</span>
+                                            <span>80%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" data-width="80%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-6">
+                                        <div class="flex justify-between mb-2">
+                                            <span>Python</span>
+                                            <span>75%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" data-width="75%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-6">
+                                        <div class="flex justify-between mb-2">
+                                            <span>Database</span>
+                                            <span>85%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" data-width="85%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- DevOps Skills -->
+                                <div class="skill-category">
+                                    <h3 class="text-xl font-semibold mb-4 text-center pb-2 border-b-2 border-primary">
+                                        DevOps</h3>
+                                    <div class="mb-6">
+                                        <div class="flex justify-between mb-2">
+                                            <span>AWS</span>
+                                            <span>70%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" data-width="70%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-6">
+                                        <div class="flex justify-between mb-2">
+                                            <span>Docker</span>
+                                            <span>75%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" data-width="75%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Rest of the tab content remains the same -->
+                        <div class="about-content pt-8" id="journey">
+                            <div class="timeline max-w-3xl mx-auto">
+                                <div class="timeline-item">
+                                    <h3 class="text-xl mb-2">Software Developer</h3>
+                                    <p class="text-primary mb-1">Government Polytechnic Nashik • 2025 - Present</p>
+                                    <p class="text-text-light">I'm an intern at Government Polytechnic Nashik where
+                                        I learn about Django framework, AWS Practitioner,building a real time online
+                                        examination
+                                        system for our college. This helps me to improve my skills and become expertise
+                                        in tech field.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="about-content pt-8" id="education">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                                <div class="bg-white p-6 rounded-lg shadow-md">
+                                    <div
+                                        class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+                                        <i class="ri-graduation-cap-fill ri-xl text-primary"></i>
+                                    </div>
+                                    <h3 class="text-xl mb-2">Diploma in Information Technology</h3>
+                                    <p class="text-primary mb-1">Government Polytechnic ,Nashik
+                                    <p>
+                                    <p class="text-text-light">2022 - 2025</p>
+                                    <p class="mt-4">Specialized in Human-Computer Interaction and Web Technologies</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="about-content pt-8" id="values">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                                <div class="text-center">
+                                    <div
+                                        class="w-16 h-16 mx-auto flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+                                        <i class="ri-user-heart-line ri-2x text-primary"></i>
+                                    </div>
+                                    <h3 class="text-xl mb-2">User-Centered</h3>
+                                    <p class="text-text-light">Putting users at the heart of every design decision</p>
+                                </div>
+                                <div class="text-center">
+                                    <div
+                                        class="w-16 h-16 mx-auto flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+                                        <i class="ri-lightbulb-line ri-2x text-primary"></i>
+                                    </div>
+                                    <h3 class="text-xl mb-2">Innovation</h3>
+                                    <p class="text-text-light">Constantly exploring new technologies and approaches</p>
+                                </div>
+                                <div class="text-center">
+                                    <div
+                                        class="w-16 h-16 mx-auto flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+                                        <i class="ri-team-line ri-2x text-primary"></i>
+                                    </div>
+                                    <h3 class="text-xl mb-2">Collaboration</h3>
+                                    <p class="text-text-light">Working together to achieve greater results</p>
+                                </div>
+                                <div class="text-center">
+                                    <div
+                                        class="w-16 h-16 mx-auto flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+                                        <i class="ri-rocket-line ri-2x text-primary"></i>
+                                    </div>
+                                    <h3 class="text-xl mb-2">Excellence</h3>
+                                    <p class="text-text-light">Striving for the highest quality in everything I do</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#contact"
+                            class="px-6 py-3 bg-primary text-white rounded-button hover:bg-primary-dark transition-all whitespace-nowrap">Contact
+                            Me</a>
+                        <a href="#"
+                            class="px-6 py-3 border border-primary text-primary rounded-button hover:bg-primary hover:text-white transition-all whitespace-nowrap">Download
+                            CV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="container">
+            <h2 class="section-title text-3xl md:text-4xl mb-6">My Projects</h2>
+            <p class="text-text-light mb-12 max-w-2xl">Here are some of my recent projects that showcase my skills and
+                expertise in web development and design.</p>
+            <div class="flex mb-8 overflow-x-auto py-2 space-x-4">
+                <button class="project-filter active px-4 py-2 !rounded-button bg-primary text-white whitespace-nowrap"
+                    data-filter="all">All Projects</button>
+                <button
+                    class="project-filter px-4 py-2 !rounded-button bg-white border border-gray-200 hover:border-primary whitespace-nowrap"
+                    data-filter="web">Web Apps</button>
+                <button
+                    class="project-filter px-4 py-2 !rounded-button bg-white border border-gray-200 hover:border-primary whitespace-nowrap"
+                    data-filter="mobile">Mobile Apps</button>
+                <button
+                    class="project-filter px-4 py-2 !rounded-button bg-white border border-gray-200 hover:border-primary whitespace-nowrap"
+                    data-filter="ui">UI/UX Design</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card rounded-lg overflow-hidden shadow-md bg-white" data-category="web">
+                    <div class="relative h-60">
+                        <img src="https://readdy.ai/api/search-image?query=modern%20e-commerce%20website%20dashboard%20interface%20with%20clean%20design%2C%20product%20listings%2C%20shopping%20cart%20functionality%2C%20professional%20UI%20design%2C%20high%20quality%20screenshot&width=600&height=400&seq=3&orientation=landscape"
+                            alt="E-commerce Platform" class="w-full h-full object-cover object-top">
+                        <div class="project-overlay p-6">
+                            <div class="flex space-x-4 mb-4">
+                                <a href="#"
+                                    class="w-10 h-10 flex items-center justify-center bg-white text-primary rounded-full">
+                                    <i class="ri-eye-line ri-lg"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 flex items-center justify-center bg-white text-primary rounded-full">
+                                    <i class="ri-github-line ri-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl mb-2">E-commerce Platform</h3>
+                        <p class="text-text-light mb-4">A full-featured e-commerce platform with product management,
+                            cart functionality, and payment integration.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-xs bg-blue-100 text-blue-600 rounded-full">HTML/CSS</span>
+                            <span class="px-3 py-1 text-xs bg-green-100 text-green-600 rounded-full">Django</span>
+                            <span class="px-3 py-1 text-xs bg-purple-100 text-purple-600 rounded-full">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card rounded-lg overflow-hidden shadow-md bg-white" data-category="web">
+                    <div class="relative h-60">
+                        <img src="https://readdy.ai/api/search-image?query=food%20delivery%20mobile%20app%20interface%20with%20restaurant%20listings%2C%20menu%20items%2C%20order%20tracking%2C%20modern%20UI%20design%20on%20smartphone%20screen%2C%20professional%20mobile%20app%20screenshot&width=600&height=400&seq=7&orientation=landscape"
+                            alt="Food Delivery App" class="w-full h-full object-cover object-top">
+                        <div class="project-overlay p-6">
+                            <div class="flex space-x-4 mb-4">
+                                <a href="#"
+                                    class="w-10 h-10 flex items-center justify-center bg-white text-primary rounded-full">
+                                    <i class="ri-eye-line ri-lg"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 flex items-center justify-center bg-white text-primary rounded-full">
+                                    <i class="ri-github-line ri-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl mb-2">Food Menu site</h3>
+                        <p class="text-text-light mb-4">A simple site that authenticate users based on their roles and
+                            allows to add food items,delete them and update them. </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-xs bg-blue-100 text-blue-600 rounded-full">Flutter</span>
+                            <span class="px-3 py-1 text-xs bg-green-100 text-green-600 rounded-full">Firebase</span>
+                            <span class="px-3 py-1 text-xs bg-yellow-100 text-yellow-600 rounded-full">Google Maps
+                                API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#"
+                    class="px-8 py-3 bg-primary text-white !rounded-button hover:bg-primary-dark transition-all inline-block whitespace-nowrap">View
+                    All Projects</a>
+            </div>
+        </div>
+    </section>
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20">
+        <div class="container">
+            <h2 class="section-title text-3xl md:text-4xl mb-6">Certifications</h2>
+            <p class="text-text-light mb-12 max-w-2xl">Professional certifications that validate my skills and knowledge
+                in various technologies and methodologies.</p>
+            <div class="relative">
+                <div class="flex overflow-x-auto pb-8 space-x-6 cert-carousel">
+                    <div class="cert-card flex-shrink-0 w-80 bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-40 bg-gray-100 flex items-center justify-center">
+                            <img src="https://readdy.ai/api/search-image?query=AWS%20certified%20solutions%20architect%20certificate%20template%20with%20AWS%20logo%2C%20professional%20certification%20design&width=400&height=200&seq=9&orientation=landscape"
+                                alt="AWS Certification" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl mb-2">AWS Certified Solutions Architect</h3>
+                            <p class="text-primary mb-1">Amazon Web Services</p>
+                            <p class="text-text-light mb-4">Issued Apr 2023 • Expires Apr 2026</p>
+                            <a href="#" class="text-primary flex items-center">
+                                <span>Verify Certificate</span>
+                                <i class="ri-external-link-line ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <button
+                    class="cert-nav-prev absolute top-1/2 left-0 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center z-10 hover:bg-gray-100">
+                    <i class="ri-arrow-left-s-line ri-lg"></i>
+                </button>
+                <button
+                    class="cert-nav-next absolute top-1/2 right-0 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center z-10 hover:bg-gray-100">
+                    <i class="ri-arrow-right-s-line ri-lg"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container">
+            <h2 class="section-title text-3xl md:text-4xl mb-6">Get In Touch</h2>
+            <p class="text-gray-400 mb-12 max-w-2xl">Feel free to contact me for any work or suggestions. I'm always
+                open to discussing new projects, creative ideas or opportunities to be part of your vision.</p>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-8">
+                    <form class="contact-form">
+                        <div class="mb-6">
+                            <label for="name" class="block mb-2 text-gray-400">Your Name</label>
+                            <input type="text" id="name"
+                                class="w-full px-4 py-3 rounded text-white border-none focus:outline-none focus:ring-2 focus:ring-primary"
+                                placeholder="John Doe" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block mb-2 text-gray-400">Your Email</label>
+                            <input type="email" id="email"
+                                class="w-full px-4 py-3 rounded text-white border-none focus:outline-none focus:ring-2 focus:ring-primary"
+                                placeholder="john@example.com" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="subject" class="block mb-2 text-gray-400">Subject</label>
+                            <input type="text" id="subject"
+                                class="w-full px-4 py-3 rounded text-white border-none focus:outline-none focus:ring-2 focus:ring-primary"
+                                placeholder="Project Inquiry">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block mb-2 text-gray-400">Message</label>
+                            <textarea id="message" rows="5"
+                                class="w-full px-4 py-3 rounded text-white border-none focus:outline-none focus:ring-2 focus:ring-primary"
+                                placeholder="Your message here..." required></textarea>
+                        </div>
+                        <button type="submit"
+                            class="px-8 py-3 bg-primary text-white !rounded-button hover:bg-primary-dark transition-all whitespace-nowrap">Send
+                            Message</button>
+                    </form>
+                </div>
+                <div class="md:w-1/2 md:pl-8">
+                    <div class="p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl mb-6 text-black">Contact Information</h3>
+                        <div class="flex items-start mb-6">
+                            <div
+                                class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-4">
+                                <i class="ri-map-pin-line ri-lg text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1 text-black">Location</h4>
+                                <p class="text-gray-400">Mannat Bunglow, Pune</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start mb-6">
+                            <div
+                                class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-4">
+                                <i class="ri-mail-line ri-lg text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1 text-black">Email</h4>
+                                <a href="mailto:john@example.com"
+                                    class="text-gray-400 hover:text-primary">john@example.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start mb-6">
+                            <div
+                                class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-4">
+                                <i class="ri-phone-line ri-lg text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1 text-black">Phone</h4>
+                                <a href="tel:+14155552671" class="text-gray-400 hover:text-primary">+1 (415)
+                                    555-2671</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-4">
+                                <i class="ri-time-line ri-lg text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1 text-black">Working Hours</h4>
+                                <p class="text-gray-400">Monday - Friday: 9AM - 6PM</p>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="font-medium mb-4">Follow Me</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://github.com/PrernaWagh"
+                                    class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full hover:bg-primary hover:text-white transition-all">
+                                    <i class="ri-github-fill ri-lg"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/prerana-wagh-39069b35a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                    class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full hover:bg-primary hover:text-white transition-all">
+                                    <i class="ri-linkedin-fill ri-lg"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full hover:bg-primary hover:text-white transition-all">
+                                    <i class="ri-twitter-fill ri-lg"></i>
+                                </a>
+                                <a href="https://www.instagram.com/prernawagh95?igsh=MTNOejBvOWxmbXc1MA=="
+                                    class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full hover:bg-primary hover:text-white transition-all">
+                                    <i class="ri-instagram-fill ri-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="py-10 text-white">
+        <div class="container">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-10">
+                <a href="#" class="text-2xl font-bold font-['Playfair_Display'] mb-6 md:mb-0 text-black">Prerna<span
+                        class="text-primary">Wagh</span></a>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="#home" class="hover:text-primary transition-all text-black">Home</a>
+                    <a href="#about" class="hover:text-primary transition-all text-black">About</a>
+                    <a href="#projects" class="hover:text-primary transition-all text-black">Projects</a>
+                    <a href="#certifications" class="hover:text-primary transition-all text-black">Certifications</a>
+                    <a href="#contact" class="hover:text-primary transition-all text-black">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 mb-4 md:mb-0">© 2025 Prerna Wagh. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-400 hover:text-primary transition-all">Privacy Policy</a>
+                <a href="#" class="text-gray-400 hover:text-primary transition-all">Terms of Service</a>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <!-- Back to Top Button -->
+    <button
+        class="back-to-top fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all">
+        <i class="ri-arrow-up-line ri-lg"></i>
+    </button>
+    <script src="script.js">
+
+    </script>
+</body>
+
+</html>
