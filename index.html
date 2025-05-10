@@ -21,30 +21,44 @@
     <div class="custom-cursor"></div>
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="container flex items-center justify-between h-[90px]">
+        <div class="container flex justify-between items-center py-4">
+            <!-- Logo/Brand -->
             <a href="#" class="text-2xl font-bold font-['Playfair_Display']">Prerna<span
-                    class="text-primary">Wagh</span></a>
-            <div class="hidden md:flex items-center space-x-8 navbar-menu">
-                <a href="#home" class="nav-link active">Home</a>
+                class="text-primary">Wagh</span></a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#projects" class="nav-link">Projects</a>
-                <a href="#certifications" class="nav-link">Certifications</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <div class="flex items-center space-x-4">
-                <div class="theme-switch">
-                    <div class="theme-switch-handle">
-                        <i class="ri-sun-line ri-sm"></i>
-                    </div>
+            
+            <!-- Theme Toggle -->
+            <div class="theme-switch ml-4">
+                <div class="theme-switch-handle">
+                    <i class="ri-sun-line ri-sm"></i>
                 </div>
-                <button class="md:hidden w-10 h-10 flex items-center justify-center menu-toggle">
-                    <i class="ri-menu-line ri-2x"></i>
-                </button>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="menu-toggle md:hidden">
+                <i class="ri-menu-line ri-2x"></i>
+            </button>
+            
+            
+        </div>
+        
+        <!-- Mobile Menu (hidden by default) -->
+        <div class="navbar-menu md:hidden">
+            <div class="container py-4">
+                <a href="#home" class="nav-link block py-2">Home</a>
+                <a href="#about" class="nav-link block py-2">About</a>
+                <a href="#projects" class="nav-link block py-2">Projects</a>
+                <a href="#contact" class="nav-link block py-2">Contact</a>
             </div>
         </div>
     </nav>
-    <!-- Mobile Menu -->
-    <div class="navbar-menu md:hidden"></div>
+    
     <!-- Hero Section -->
     <section id="home" class="hero flex items-center">
         <div class="hero-shapes">
@@ -86,8 +100,7 @@
                 <div class="md:w-1/2 flex justify-center">
                     <div
                         class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
-                        <img src="https://readdy.ai/api/search-image?query=professional%20portrait%20of%20a%20young%20male%20developer%20with%20short%20dark%20hair%2C%20wearing%20a%20modern%20casual%20outfit%2C%20looking%20confident%2C%20high%20quality%20studio%20lighting%2C%20professional%20headshot%2C%20on%20a%20simple%20light%20gradient%20background&width=400&height=400&seq=1&orientation=squarish"
-                            alt="Prerna Wagh" class="w-full h-full object-cover object-top">
+                        <img src="MyProfile.jpg" alt="Prerna Wagh" class="w-full h-full object-cover object-top">
                     </div>
                 </div>
             </div>
@@ -226,7 +239,7 @@
 
                         <div class="about-content pt-8" id="education">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                                <div class="bg-white p-6 rounded-lg shadow-md">
+                                <div class="p-6 rounded-lg shadow-md">
                                     <div
                                         class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
                                         <i class="ri-graduation-cap-fill ri-xl text-primary"></i>
@@ -359,13 +372,69 @@
                         <p class="text-text-light mb-4">A simple site that authenticate users based on their roles and
                             allows to add food items,delete them and update them. </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 text-xs bg-blue-100 text-blue-600 rounded-full">Flutter</span>
-                            <span class="px-3 py-1 text-xs bg-green-100 text-green-600 rounded-full">Firebase</span>
-                            <span class="px-3 py-1 text-xs bg-yellow-100 text-yellow-600 rounded-full">Google Maps
-                                API</span>
+                            <span class="px-3 py-1 text-xs bg-blue-100 text-blue-600 rounded-full">HTML/Tailwind CSS</span>
+                            <span class="px-3 py-1 text-xs bg-green-100 text-green-600 rounded-full">Python</span>
+                            <span class="px-3 py-1 text-xs bg-yellow-100 text-yellow-600 rounded-full">Django</span>
                         </div>
                     </div>
                 </div>
+                <div class="project-card rounded-lg overflow-hidden shadow-md bg-white" data-category="web">
+                    <div class="relative h-60">
+                        <img src="https://th.bing.com/th/id/OIP.yVv-XRCt-7GiRvcIQhn-tgHaER?w=290&h=181&c=7&r=0&o=5&pid=1.7"
+                            alt="Portfolio" class="w-full h-full object-cover object-top">
+                        <div class="project-overlay p-6">
+                            <div class="flex space-x-4 mb-4">
+                                <a href="#"
+                                    class="w-10 h-10 flex items-center justify-center bg-white text-primary rounded-full">
+                                    <i class="ri-eye-line ri-lg"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 flex items-center justify-center bg-white text-primary rounded-full">
+                                    <i class="ri-github-line ri-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl mb-2">Portfolio Site</h3>
+                        <p class="text-text-light mb-4">An advanced portfolio site designed to showcase my skills,projects and 
+                            achievements. </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-xs bg-blue-100 text-blue-600 rounded-full">HTML/CSS</span>
+                            <span class="px-3 py-1 text-xs bg-green-100 text-green-600 rounded-full">Django</span>
+                            <span class="px-3 py-1 text-xs bg-yellow-100 text-yellow-600 rounded-full">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card rounded-lg overflow-hidden shadow-md bg-white" data-category="web">
+                    <div class="relative h-60">
+                        <img src="https://th.bing.com/th/id/OIP.yVv-XRCt-7GiRvcIQhn-tgHaER?w=290&h=181&c=7&r=0&o=5&pid=1.7"
+                            alt="Online Examination System" class="w-full h-full object-cover object-top">
+                        <div class="project-overlay p-6">
+                            <div class="flex space-x-4 mb-4">
+                                <a href="#"
+                                    class="w-10 h-10 flex items-center justify-center bg-white text-primary rounded-full">
+                                    <i class="ri-eye-line ri-lg"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 flex items-center justify-center bg-white text-primary rounded-full">
+                                    <i class="ri-github-line ri-lg"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl mb-2">Online Examination System</h3>
+                        <p class="text-text-light mb-4">A real time online examination system with fully functional 
+                            admin dashboard and student exam portal. </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-xs bg-blue-100 text-blue-600 rounded-full">HTML/CSS</span>
+                            <span class="px-3 py-1 text-xs bg-green-100 text-green-600 rounded-full">Django</span>
+                            <span class="px-3 py-1 text-xs bg-yellow-100 text-yellow-600 rounded-full">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <div class="text-center mt-12">
                 <a href="#"
@@ -449,14 +518,14 @@
                 </div>
                 <div class="md:w-1/2 md:pl-8">
                     <div class="p-8 rounded-lg shadow-md">
-                        <h3 class="text-xl mb-6 text-black">Contact Information</h3>
+                        <h3 class="text-xl mb-6">Contact Information</h3>
                         <div class="flex items-start mb-6">
                             <div
                                 class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-4">
                                 <i class="ri-map-pin-line ri-lg text-primary"></i>
                             </div>
                             <div>
-                                <h4 class="font-medium mb-1 text-black">Location</h4>
+                                <h4 class="font-medium mb-1">Location</h4>
                                 <p class="text-gray-400">Mannat Bunglow, Pune</p>
                             </div>
                         </div>
@@ -466,7 +535,7 @@
                                 <i class="ri-mail-line ri-lg text-primary"></i>
                             </div>
                             <div>
-                                <h4 class="font-medium mb-1 text-black">Email</h4>
+                                <h4 class="font-medium mb-1">Email</h4>
                                 <a href="mailto:john@example.com"
                                     class="text-gray-400 hover:text-primary">john@example.com</a>
                             </div>
@@ -477,7 +546,7 @@
                                 <i class="ri-phone-line ri-lg text-primary"></i>
                             </div>
                             <div>
-                                <h4 class="font-medium mb-1 text-black">Phone</h4>
+                                <h4 class="font-medium mb-1">Phone</h4>
                                 <a href="tel:+14155552671" class="text-gray-400 hover:text-primary">+1 (415)
                                     555-2671</a>
                             </div>
@@ -488,7 +557,7 @@
                                 <i class="ri-time-line ri-lg text-primary"></i>
                             </div>
                             <div>
-                                <h4 class="font-medium mb-1 text-black">Working Hours</h4>
+                                <h4 class="font-medium mb-1">Working Hours</h4>
                                 <p class="text-gray-400">Monday - Friday: 9AM - 6PM</p>
                             </div>
                         </div>
@@ -496,20 +565,20 @@
                             <h4 class="font-medium mb-4">Follow Me</h4>
                             <div class="flex space-x-4">
                                 <a href="https://github.com/PrernaWagh"
-                                    class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full hover:bg-primary hover:text-white transition-all">
-                                    <i class="ri-github-fill ri-lg"></i>
+                                    class="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-primary transition-all group">
+                                    <i class="ri-github-fill ri-lg text-gray-700 dark:text-gray-300 group-hover:text-white"></i>
                                 </a>
                                 <a href="https://www.linkedin.com/in/prerana-wagh-39069b35a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-                                    class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full hover:bg-primary hover:text-white transition-all">
-                                    <i class="ri-linkedin-fill ri-lg"></i>
+                                    class="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-primary transition-all group">
+                                    <i class="ri-linkedin-fill ri-lg text-gray-700 dark:text-gray-300 group-hover:text-white"></i>
                                 </a>
                                 <a href="#"
-                                    class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full hover:bg-primary hover:text-white transition-all">
-                                    <i class="ri-twitter-fill ri-lg"></i>
+                                    class="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-primary transition-all group">
+                                    <i class="ri-twitter-fill ri-lg text-gray-700 dark:text-gray-300 group-hover:text-white"></i>
                                 </a>
                                 <a href="https://www.instagram.com/prernawagh95?igsh=MTNOejBvOWxmbXc1MA=="
-                                    class="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full hover:bg-primary hover:text-white transition-all">
-                                    <i class="ri-instagram-fill ri-lg"></i>
+                                    class="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-primary transition-all group">
+                                    <i class="ri-instagram-fill ri-lg text-gray-700 dark:text-gray-300 group-hover:text-white"></i>
                                 </a>
                             </div>
                         </div>
@@ -522,14 +591,14 @@
     <footer class="py-10 text-white">
         <div class="container">
             <div class="flex flex-col md:flex-row justify-between items-center mb-10">
-                <a href="#" class="text-2xl font-bold font-['Playfair_Display'] mb-6 md:mb-0 text-black">Prerna<span
+                <a href="#" class="text-2xl font-bold font-['Playfair_Display'] mb-6 md:mb-0">Prerna<span
                         class="text-primary">Wagh</span></a>
                 <div class="flex flex-wrap justify-center gap-6">
-                    <a href="#home" class="hover:text-primary transition-all text-black">Home</a>
-                    <a href="#about" class="hover:text-primary transition-all text-black">About</a>
-                    <a href="#projects" class="hover:text-primary transition-all text-black">Projects</a>
-                    <a href="#certifications" class="hover:text-primary transition-all text-black">Certifications</a>
-                    <a href="#contact" class="hover:text-primary transition-all text-black">Contact</a>
+                    <a href="#home" class="hover:text-primary transition-all">Home</a>
+                    <a href="#about" class="hover:text-primary transition-all">About</a>
+                    <a href="#projects" class="hover:text-primary transition-all">Projects</a>
+                    <a href="#certifications" class="hover:text-primary transition-all">Certifications</a>
+                    <a href="#contact" class="hover:text-primary transition-all">Contact</a>
                 </div>
             </div>
         </div>

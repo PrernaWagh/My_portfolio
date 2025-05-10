@@ -1,3 +1,32 @@
+// Mobile Menu Toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const navbarMenu = document.querySelector('.navbar-menu');
+
+menuToggle.addEventListener('click', function() {
+    // Toggle the 'active' class on the mobile menu
+    navbarMenu.classList.toggle('active');
+    
+    // Change the icon based on menu state
+    const icon = menuToggle.querySelector('i');
+    if (navbarMenu.classList.contains('active')) {
+        icon.classList.remove('ri-menu-line');
+        icon.classList.add('ri-close-line');
+    } else {
+        icon.classList.remove('ri-close-line');
+        icon.classList.add('ri-menu-line');
+    }
+});
+
+// Close mobile menu when clicking a nav link
+document.querySelectorAll('.navbar-menu .nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        navbarMenu.classList.remove('active');
+        const icon = menuToggle.querySelector('i');
+        icon.classList.remove('ri-close-line');
+        icon.classList.add('ri-menu-line');
+    });
+});
+
 document.addEventListener('DOMContentLoaded', function () {
     // Theme Toggle
 const themeSwitch = document.querySelector('.theme-switch');
@@ -41,34 +70,34 @@ if (localStorage.getItem('darkMode') === 'true') {
     document.body.appendChild(particles);
 }
     });
-    // Mobile Menu Toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navbarMenu = document.querySelector('.navbar-menu');
-    menuToggle.addEventListener('click', function () {
-        navbarMenu.classList.toggle('active');
-        if (navbarMenu.classList.contains('active')) {
-            menuToggle.innerHTML = '<i class="ri-close-line ri-2x"></i>';
-        } else {
-            menuToggle.innerHTML = '<i class="ri-menu-line ri-2x"></i>';
-        }
-    });
-    // Smooth Scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 90,
-                    behavior: 'smooth'
-                });
-                // Close mobile menu if open
-                navbarMenu.classList.remove('active');
-                menuToggle.innerHTML = '<i class="ri-menu-line ri-2x"></i>';
-            }
-        });
-    });
+    // // Mobile Menu Toggle
+    // const menuToggle = document.querySelector('.menu-toggle');
+    // const navbarMenu = document.querySelector('.navbar-menu');
+    // menuToggle.addEventListener('click', function () {
+    //     navbarMenu.classList.toggle('active');
+    //     if (navbarMenu.classList.contains('active')) {
+    //         menuToggle.innerHTML = '<i class="ri-close-line ri-2x"></i>';
+    //     } else {
+    //         menuToggle.innerHTML = '<i class="ri-menu-line ri-2x"></i>';
+    //     }
+    // });
+    // // Smooth Scroll
+    // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    //     anchor.addEventListener('click', function (e) {
+    //         e.preventDefault();
+    //         const targetId = this.getAttribute('href');
+    //         const targetElement = document.querySelector(targetId);
+    //         if (targetElement) {
+    //             window.scrollTo({
+    //                 top: targetElement.offsetTop - 90,
+    //                 behavior: 'smooth'
+    //             });
+    //             // Close mobile menu if open
+    //             navbarMenu.classList.remove('active');
+    //             menuToggle.innerHTML = '<i class="ri-menu-line ri-2x"></i>';
+    //         }
+    //     });
+    // });
     // Active Nav Link on Scroll
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-link');
