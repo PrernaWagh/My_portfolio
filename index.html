@@ -66,6 +66,12 @@
         </div>
         <div class="container">
             <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 flex justify-center">
+                    <div
+                        class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                        <img src="images/MyProfile.jpg" alt="Prerna Wagh" class="w-full h-full object-cover object-top">
+                    </div>
+                </div>
                 <div class="md:w-1/2 mb-10 md:mb-0">
                     <p class="text-primary mb-2">Hello, I'm</p>
                     <h1 class="text-4xl md:text-6xl mb-4">Prerna Wagh</h1>
@@ -95,12 +101,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <div
-                        class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
-                        <img src="images/MyProfile.jpg" alt="Prerna Wagh" class="w-full h-full object-cover object-top">
-                    </div>
-                </div>
+                
             </div>
         </div>
         <a href="#about" class="scroll-down w-10 h-10 flex items-center justify-center">
@@ -307,23 +308,23 @@
             <p class="text-text-light mb-12 max-w-2xl">Here are some of my recent projects that showcase my skills and
                 expertise in web development and design.</p>
             <div class="flex mb-8 overflow-x-auto py-2 space-x-4">
-                <button class="project-filter active px-4 py-2 !rounded-button bg-primary text-white whitespace-nowrap"
+                <button class="project-filter active px-4 py-2 !rounded-button bg-primary whitespace-nowrap text-black"
                     data-filter="all">All Projects</button>
                 <button
-                    class="project-filter px-4 py-2 !rounded-button bg-white border border-gray-200 hover:border-primary whitespace-nowrap"
+                    class="project-filter px-4 py-2 !rounded-button bg-white border border-gray-200 hover:border-primary whitespace-nowrap text-black"
                     data-filter="web">Web Apps</button>
                 <button
-                    class="project-filter px-4 py-2 !rounded-button bg-white border border-gray-200 hover:border-primary whitespace-nowrap"
+                    class="project-filter px-4 py-2 !rounded-button bg-white border border-gray-200 hover:border-primary whitespace-nowrap text-black"
                     data-filter="mobile">Mobile Apps</button>
                 <button
-                    class="project-filter px-4 py-2 !rounded-button bg-white border border-gray-200 hover:border-primary whitespace-nowrap"
+                    class="project-filter px-4 py-2 !rounded-button bg-white border border-gray-200 hover:border-primary whitespace-nowrap text-black"
                     data-filter="ui">UI/UX Design</button>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="project-card rounded-lg overflow-hidden shadow-md bg-white" data-category="web">
                     <div class="relative h-60">
-                        <img src="https://readdy.ai/api/search-image?query=modern%20e-commerce%20website%20dashboard%20interface%20with%20clean%20design%2C%20product%20listings%2C%20shopping%20cart%20functionality%2C%20professional%20UI%20design%2C%20high%20quality%20screenshot&width=600&height=400&seq=3&orientation=landscape"
-                            alt="E-commerce Platform" class="w-full h-full object-cover object-top">
+                        <img src="images/expense-tracker.jpg"
+                            alt="Expense Tracker System" class="w-full h-full object-cover object-top">
                         <div class="project-overlay p-6">
                             <div class="flex space-x-4 mb-4">
                                 <a href="#"
@@ -338,13 +339,13 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl mb-2">E-commerce Platform</h3>
-                        <p class="text-text-light mb-4">A full-featured e-commerce platform with product management,
-                            cart functionality, and payment integration.</p>
+                        <h3 class="text-xl mb-2">Expense Tracker System</h3>
+                        <p class="text-text-light mb-4">A simple and responsive web application designed to help users manage personal 
+                            day-to-day expenses efficiently.</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 text-xs bg-blue-100 text-blue-600 rounded-full">HTML/CSS</span>
+                            <span class="px-3 py-1 text-xs bg-blue-100 text-blue-600 rounded-full">HTML/Tailwind CSS</span>
                             <span class="px-3 py-1 text-xs bg-green-100 text-green-600 rounded-full">Django</span>
-                            <span class="px-3 py-1 text-xs bg-purple-100 text-purple-600 rounded-full">MySQL</span>
+                            <span class="px-3 py-1 text-xs bg-purple-100 text-purple-600 rounded-full">SqLite</span>
                         </div>
                     </div>
                 </div>
@@ -436,7 +437,7 @@
             </div>
             <div class="text-center mt-12">
                 <a href="#"
-                    class="px-8 py-3 bg-primary text-white !rounded-button hover:bg-primary-dark transition-all inline-block whitespace-nowrap">View
+                    class="px-8 py-3 bg-primary !rounded-button hover:bg-primary-dark transition-all inline-block whitespace-nowrap">View
                     All Projects</a>
             </div>
         </div>
