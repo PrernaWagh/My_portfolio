@@ -70,34 +70,6 @@ if (localStorage.getItem('darkMode') === 'true') {
     document.body.appendChild(particles);
 }
     });
-    // // Mobile Menu Toggle
-    // const menuToggle = document.querySelector('.menu-toggle');
-    // const navbarMenu = document.querySelector('.navbar-menu');
-    // menuToggle.addEventListener('click', function () {
-    //     navbarMenu.classList.toggle('active');
-    //     if (navbarMenu.classList.contains('active')) {
-    //         menuToggle.innerHTML = '<i class="ri-close-line ri-2x"></i>';
-    //     } else {
-    //         menuToggle.innerHTML = '<i class="ri-menu-line ri-2x"></i>';
-    //     }
-    // });
-    // // Smooth Scroll
-    // document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    //     anchor.addEventListener('click', function (e) {
-    //         e.preventDefault();
-    //         const targetId = this.getAttribute('href');
-    //         const targetElement = document.querySelector(targetId);
-    //         if (targetElement) {
-    //             window.scrollTo({
-    //                 top: targetElement.offsetTop - 90,
-    //                 behavior: 'smooth'
-    //             });
-    //             // Close mobile menu if open
-    //             navbarMenu.classList.remove('active');
-    //             menuToggle.innerHTML = '<i class="ri-menu-line ri-2x"></i>';
-    //         }
-    //     });
-    // });
     // Active Nav Link on Scroll
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-link');
