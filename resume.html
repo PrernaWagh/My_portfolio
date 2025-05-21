@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prerna Wagh - Resume</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background-color: #f8f8f8;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .resume-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 40px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        h1, h2, h3 {
+            color: #222;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        
+        h2 {
+            font-size: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        
+        .contact-info span {
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 5px;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .job, .project, .education-item {
+            margin-bottom: 20px;
+        }
+        
+        .job-header, .education-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .job-title, .degree {
+            font-weight: 600;
+        }
+        
+        .company, .school {
+            font-style: italic;
+        }
+        
+        .date {
+            color: #666;
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+        
+        li {
+            margin-bottom: 5px;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .skill {
+            margin-bottom: 10px;
+        }
+        
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3px;
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-level {
+            height: 100%;
+            background: #555;
+            border-radius: 4px;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 5px;
+        }
+        
+        .tag {
+            background: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            
+            .resume-container {
+                box-shadow: none;
+                padding: 20px;
+                max-width: 100%;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        /* Floating action buttons */
+        .action-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .action-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #555;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .action-btn:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Prerna Wagh</h1>
+            <h2>Full Stack Developer</h2>
+            <div class="contact-info">
+                <span><i class="ri-mail-line"></i> prernawagh95@gmail.com</span>
+                <span><i class="ri-phone-line"></i> +91 1234567890</span>
+                <span><i class="ri-map-pin-line"></i> Nashik, Maharashtra</span>
+                <span><i class="ri-github-line"></i> github.com/PrernaWagh</span>
+                <span><i class="ri-linkedin-line"></i> linkedin.com/in/prerana-wagh</span>
+            </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="section">
+            <h2>SUMMARY</h2>
+            <p>
+                Passionate Full Stack Developer specializing in building dynamic and responsive web applications that combine great design with strong functionality. 
+                Experienced in front-end and back-end technologies with a commitment to continuous learning and building impactful solutions.
+            </p>
+        </div>
+
+        <!-- Skills -->
+        <div class="section">
+            <h2>TECHNICAL SKILLS</h2>
+            <div class="skills">
+                <!-- Frontend Skills -->
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>HTML/CSS</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>JavaScript</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>React</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Backend Skills -->
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>Node.js</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>Python</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">
+                            <span>Database</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="section">
+            <h2>EXPERIENCE</h2>
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Software Developer Intern</span> - 
+                        <span class="company">Government Polytechnic Nashik</span>
+                    </div>
+                    <div class="date">2025 - Present</div>
+                </div>
+                <ul>
+                    <li>Learning Django framework and AWS Practitioner</li>
+                    <li>Building a real-time online examination system for college</li>
+                    <li>Improving technical skills to become expert in tech field</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="section">
+            <h2>PROJECTS</h2>
+            <div class="project">
+                <h3>Expense Tracker System</h3>
+                <p>A simple and responsive web application designed to help users manage personal day-to-day expenses efficiently.</p>
+                <div class="project-tags">
+                    <span class="tag">HTML/Tailwind CSS</span>
+                    <span class="tag">Django</span>
+                    <span class="tag">SqLite</span>
+                </div>
+            </div>
+            
+            <div class="project">
+                <h3>Online Examination System</h3>
+                <p>A real time online examination system with fully functional admin dashboard and student exam portal.</p>
+                <div class="project-tags">
+                    <span class="tag">HTML/CSS</span>
+                    <span class="tag">Django</span>
+                    <span class="tag">MySQL</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <h2>EDUCATION</h2>
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <span class="degree">Diploma in Information Technology</span> - 
+                        <span class="school">Government Polytechnic, Nashik</span>
+                    </div>
+                    <div class="date">2022 - 2025</div>
+                </div>
+                <p>Specialized in Human-Computer Interaction and Web Technologies</p>
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="section">
+            <h2>CERTIFICATIONS</h2>
+            <div>
+                <h3>AWS Certified Solutions Architect</h3>
+                <div class="education-header">
+                    <div>Amazon Web Services</div>
+                    <div class="date">Issued Apr 2023 • Expires Apr 2026</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating action buttons -->
+    <div class="action-buttons no-print">
+        <div class="action-btn" title="Download PDF" onclick="generatePDF()">
+            <i class="ri-download-line"></i>
+        </div>
+        <div class="action-btn" title="Print" onclick="window.print()">
+            <i class="ri-printer-line"></i>
+        </div>
+        <div class="action-btn" title="Close" onclick="window.close()">
+            <i class="ri-close-line"></i>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        function generatePDF() {
+            const element = document.querySelector('.resume-container');
+            
+            // Remove action buttons before generating PDF
+            const actionButtons = document.querySelector('.action-buttons');
+            actionButtons.style.display = 'none';
+            
+            const opt = {
+                margin: 10,
+                filename: 'PrernaWagh-Resume.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { 
+                    scale: 2,
+                    letterRendering: true,
+                    useCORS: true,
+                    scrollX: 0,
+                    scrollY: 0,
+                    windowWidth: document.documentElement.offsetWidth,
+                    windowHeight: document.documentElement.offsetHeight
+                },
+                jsPDF: { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'portrait' 
+                },
+                pagebreak: { mode: ['css', 'legacy'] }
+            };
+
+            html2pdf()
+                .set(opt)
+                .from(element)
+                .save()
+                .then(() => {
+                    // Restore action buttons after PDF generation
+                    actionButtons.style.display = 'flex';
+                })
+                .catch(err => {
+                    console.error('Error generating PDF:', err);
+                    actionButtons.style.display = 'flex';
+                    window.print();
+                });
+        }
+    </script>
+</body>
+</html>
