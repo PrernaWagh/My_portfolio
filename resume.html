@@ -7,62 +7,80 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
+        :root {
+            --primary-text: #222;
+            --secondary-text: #666;
+            --light-bg: #f8f8f8;
+            --border-color: #ddd;
+            --skill-bar-bg: #f0f0f0;
+            --skill-bar-fill: #555;
+            --tag-bg: #f0f0f0;
+            --action-btn-bg: #555;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.5;
-            color: #333;
-            background-color: #f8f8f8;
+            color: var(--primary-text);
+            background-color: var(--light-bg);
             padding: 0;
             margin: 0;
+            -webkit-text-size-adjust: 100%;
         }
         
         .resume-container {
             max-width: 800px;
             margin: 20px auto;
-            padding: 40px;
+            padding: 30px;
             background: white;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         
         h1, h2, h3 {
-            color: #222;
+            color: var(--primary-text);
+            margin-top: 0;
         }
         
         h1 {
-            font-size: 28px;
+            font-size: clamp(24px, 5vw, 28px);
             margin-bottom: 5px;
         }
         
         h2 {
-            font-size: 20px;
-            border-bottom: 1px solid #ddd;
+            font-size: clamp(18px, 4vw, 20px);
+            border-bottom: 1px solid var(--border-color);
             padding-bottom: 5px;
             margin-top: 25px;
             margin-bottom: 15px;
         }
         
         h3 {
-            font-size: 18px;
+            font-size: clamp(16px, 4vw, 18px);
             margin-bottom: 5px;
         }
         
         .header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         
         .contact-info {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 10px 15px;
             margin-top: 10px;
-            font-size: 14px;
+            font-size: clamp(12px, 3vw, 14px);
         }
         
         .contact-info span {
             display: flex;
             align-items: center;
+            white-space: nowrap;
         }
         
         .contact-info i {
@@ -70,17 +88,24 @@
         }
         
         .section {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         
         .job, .project, .education-item {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         .job-header, .education-header {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             margin-bottom: 5px;
+        }
+        
+        @media (min-width: 480px) {
+            .job-header, .education-header {
+                flex-direction: row;
+                justify-content: space-between;
+            }
         }
         
         .job-title, .degree {
@@ -92,12 +117,20 @@
         }
         
         .date {
-            color: #666;
+            color: var(--secondary-text);
+            margin-top: 3px;
+        }
+        
+        @media (min-width: 480px) {
+            .date {
+                margin-top: 0;
+            }
         }
         
         ul {
             padding-left: 20px;
             margin-top: 5px;
+            margin-bottom: 0;
         }
         
         li {
@@ -106,35 +139,43 @@
         
         .skills {
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        @media (min-width: 600px) {
+            .skills {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
         }
         
         .skill-category {
             flex: 1;
-            min-width: 200px;
+            min-width: 0;
         }
         
         .skill {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         
         .skill-name {
             display: flex;
             justify-content: space-between;
             margin-bottom: 3px;
+            font-size: clamp(13px, 3vw, 14px);
         }
         
         .skill-bar {
             height: 8px;
-            background: #f0f0f0;
+            background: var(--skill-bar-bg);
             border-radius: 4px;
             overflow: hidden;
         }
         
         .skill-level {
             height: 100%;
-            background: #555;
+            background: var(--skill-bar-fill);
             border-radius: 4px;
         }
         
@@ -146,55 +187,101 @@
         }
         
         .tag {
-            background: #f0f0f0;
+            background: var(--tag-bg);
             padding: 2px 8px;
             border-radius: 4px;
             font-size: 12px;
+            white-space: nowrap;
         }
         
         @media print {
             body {
                 background: none;
                 padding: 0;
+                font-size: 12pt;
             }
             
             .resume-container {
                 box-shadow: none;
                 padding: 20px;
                 max-width: 100%;
+                margin: 0;
             }
             
             .no-print {
-                display: none;
+                display: none !important;
+            }
+            
+            h1 {
+                font-size: 20pt;
+            }
+            
+            h2 {
+                font-size: 16pt;
+            }
+            
+            h3 {
+                font-size: 14pt;
+            }
+            
+            .contact-info {
+                font-size: 10pt;
             }
         }
         
         /* Floating action buttons */
         .action-buttons {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 15px;
+            right: 15px;
             display: flex;
+            flex-direction: column;
             gap: 10px;
+            z-index: 100;
+        }
+        
+        @media (min-width: 768px) {
+            .action-buttons {
+                flex-direction: row;
+            }
         }
         
         .action-btn {
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
-            background: #555;
+            background: var(--action-btn-bg);
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
             transition: all 0.3s ease;
+            border: none;
+            font-size: 18px;
         }
         
         .action-btn:hover {
             background: #333;
             transform: translateY(-2px);
+        }
+        
+        /* Mobile-specific adjustments */
+        @media (max-width: 600px) {
+            .resume-container {
+                padding: 20px 15px;
+                margin: 10px;
+            }
+            
+            .contact-info {
+                gap: 8px 12px;
+                justify-content: flex-start;
+            }
+            
+            .section {
+                margin-bottom: 15px;
+            }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
@@ -366,60 +453,72 @@
 
     <!-- Floating action buttons -->
     <div class="action-buttons no-print">
-        <div class="action-btn" title="Download PDF" onclick="generatePDF()">
+        <button class="action-btn" title="Download PDF" onclick="generatePDF()">
             <i class="ri-download-line"></i>
-        </div>
-        <div class="action-btn" title="Print" onclick="window.print()">
+        </button>
+        <button class="action-btn" title="Print" onclick="window.print()">
             <i class="ri-printer-line"></i>
-        </div>
-        <div class="action-btn" title="Close" onclick="window.close()">
+        </button>
+        <button class="action-btn" title="Close" onclick="window.close()">
             <i class="ri-close-line"></i>
-        </div>
+        </button>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script>
         function generatePDF() {
             const element = document.querySelector('.resume-container');
-            
-            // Remove action buttons before generating PDF
             const actionButtons = document.querySelector('.action-buttons');
+            
+            // Hide action buttons before capture
             actionButtons.style.display = 'none';
             
+            // Scroll to top to ensure we capture everything
+            window.scrollTo(0, 0);
+            
             const opt = {
-                margin: 10,
+                margin: [10, 10, 10, 10],
                 filename: 'PrernaWagh-Resume.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
+                image: { 
+                    type: 'jpeg', 
+                    quality: 0.98 
+                },
                 html2canvas: { 
                     scale: 2,
                     letterRendering: true,
                     useCORS: true,
                     scrollX: 0,
                     scrollY: 0,
-                    windowWidth: document.documentElement.offsetWidth,
-                    windowHeight: document.documentElement.offsetHeight
+                    windowWidth: document.documentElement.scrollWidth,
+                    windowHeight: document.documentElement.scrollHeight
                 },
                 jsPDF: { 
                     unit: 'mm', 
                     format: 'a4', 
-                    orientation: 'portrait' 
+                    orientation: 'portrait',
+                    compressPDF: true
                 },
-                pagebreak: { mode: ['css', 'legacy'] }
+                pagebreak: { 
+                    mode: ['avoid-all', 'css', 'legacy'],
+                    before: '.section' 
+                }
             };
 
-            html2pdf()
-                .set(opt)
-                .from(element)
-                .save()
-                .then(() => {
-                    // Restore action buttons after PDF generation
-                    actionButtons.style.display = 'flex';
-                })
-                .catch(err => {
-                    console.error('Error generating PDF:', err);
-                    actionButtons.style.display = 'flex';
-                    window.print();
-                });
+            // Add small delay to ensure DOM updates
+            setTimeout(() => {
+                html2pdf()
+                    .set(opt)
+                    .from(element)
+                    .save()
+                    .then(() => {
+                        actionButtons.style.display = 'flex';
+                    })
+                    .catch(err => {
+                        console.error('Error generating PDF:', err);
+                        actionButtons.style.display = 'flex';
+                        window.print();
+                    });
+            }, 200);
         }
     </script>
 </body>
