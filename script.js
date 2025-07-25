@@ -232,40 +232,30 @@ document.addEventListener('DOMContentLoaded', function () {
 // Certificate Modal Functionality
 document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById('certificateModal');
-    const modalImg = document.getElementById('modalCertificateImage');
-    const closeModal = document.getElementById('closeModal');
-    const viewButtons = document.querySelectorAll('.view-certificate');
+const modalImg = document.getElementById('modalCertificateImage');
+const closeModal = document.getElementById('closeModal');
+const viewButtons = document.querySelectorAll('.view-certificate');
 
-    // Open modal when view button is clicked
-    viewButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const certImage = this.getAttribute('data-certificate');
-            modalImg.src = certImage;
-            modal.classList.remove('invisible', 'opacity-0');
-            modal.classList.add('opacity-100');
-            document.body.style.overflow = 'hidden';
-        });
+viewButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const imgSrc = button.getAttribute('data-certificate');
+        modalImg.src = imgSrc;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
     });
+});
 
-    // Close modal
-    closeModal.addEventListener('click', function () {
-        modal.classList.remove('opacity-100');
-        modal.classList.add('opacity-0');
-        setTimeout(() => {
-            modal.classList.add('invisible');
-            document.body.style.overflow = '';
-        }, 300);
-    });
+closeModal.addEventListener('click', () => {
+    modal.classList.remove('active');
+    document.body.style.overflow = ''; // Re-enable scrolling
+});
 
-    // Close when clicking outside image
-    modal.addEventListener('click', function (e) {
-        if (e.target === modal) {
-            modal.classList.remove('opacity-100');
-            modal.classList.add('opacity-0');
-            setTimeout(() => {
-                modal.classList.add('invisible');
-                document.body.style.overflow = '';
-            }, 300);
-        }
+// Close when clicking outside image
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
     });
 });
