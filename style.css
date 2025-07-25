@@ -881,3 +881,11 @@ input[type="number"]::-webkit-outer-spin-button {
         display: none;
     }
 }
+/* Certificate Modal Styles */
+#certificateModal {
+    backdrop-filter: blur(5px);
+}
+
+.cert-overlay {
+    transition: opacity 0.3s ease;
+}

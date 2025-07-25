@@ -1,11 +1,12 @@
+
 // Mobile Menu Toggle
 const menuToggle = document.querySelector('.menu-toggle');
 const navbarMenu = document.querySelector('.navbar-menu');
 
-menuToggle.addEventListener('click', function() {
+menuToggle.addEventListener('click', function () {
     // Toggle the 'active' class on the mobile menu
     navbarMenu.classList.toggle('active');
-    
+
     // Change the icon based on menu state
     const icon = menuToggle.querySelector('i');
     if (navbarMenu.classList.contains('active')) {
@@ -29,112 +30,112 @@ document.querySelectorAll('.navbar-menu .nav-link').forEach(link => {
 
 document.addEventListener('DOMContentLoaded', function () {
     // Theme Toggle
-const themeSwitch = document.querySelector('.theme-switch');
-const themeSwitchHandle = document.querySelector('.theme-switch-handle');
-themeSwitch.addEventListener('click', function () {
-    document.body.classList.toggle('dark-mode');
-    
-    // Add/remove particles based on dark mode
-    if (document.body.classList.contains('dark-mode')) {
+    const themeSwitch = document.querySelector('.theme-switch');
+    const themeSwitchHandle = document.querySelector('.theme-switch-handle');
+    themeSwitch.addEventListener('click', function () {
+        document.body.classList.toggle('dark-mode');
+
+        // Add/remove particles based on dark mode
+        if (document.body.classList.contains('dark-mode')) {
+            themeSwitchHandle.innerHTML = '<i class="ri-moon-line ri-sm"></i>';
+            // Create particles
+            const particles = document.createElement('div');
+            particles.className = 'floating-particles';
+            for (let i = 0; i < 7; i++) {
+                particles.innerHTML += '<div class="particle"></div>';
+            }
+            document.body.appendChild(particles);
+        } else {
+            themeSwitchHandle.innerHTML = '<i class="ri-sun-line ri-sm"></i>';
+            // Remove particles
+            const particles = document.querySelector('.floating-particles');
+            if (particles) {
+                particles.remove();
+            }
+        }
+
+        // Save theme preference to localStorage
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
+
+    // Check for saved theme preference on page load
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
         themeSwitchHandle.innerHTML = '<i class="ri-moon-line ri-sm"></i>';
-        // Create particles
+        // Create particles if dark mode is enabled
         const particles = document.createElement('div');
         particles.className = 'floating-particles';
         for (let i = 0; i < 7; i++) {
             particles.innerHTML += '<div class="particle"></div>';
         }
         document.body.appendChild(particles);
-    } else {
-        themeSwitchHandle.innerHTML = '<i class="ri-sun-line ri-sm"></i>';
-        // Remove particles
-        const particles = document.querySelector('.floating-particles');
-        if (particles) {
-            particles.remove();
-        }
     }
-    
-    // Save theme preference to localStorage
-    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
 });
-
-// Check for saved theme preference on page load
-if (localStorage.getItem('darkMode') === 'true') {
-    document.body.classList.add('dark-mode');
-    themeSwitchHandle.innerHTML = '<i class="ri-moon-line ri-sm"></i>';
-    // Create particles if dark mode is enabled
-    const particles = document.createElement('div');
-    particles.className = 'floating-particles';
-    for (let i = 0; i < 7; i++) {
-        particles.innerHTML += '<div class="particle"></div>';
+// Active Nav Link on Scroll
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-link');
+window.addEventListener('scroll', function () {
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+            current = section.getAttribute('id');
+        }
+    });
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+});
+// Back to Top Button
+const backToTopButton = document.querySelector('.back-to-top');
+window.addEventListener('scroll', function () {
+    if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('opacity-100', 'visible');
+        backToTopButton.classList.remove('opacity-0', 'invisible');
+    } else {
+        backToTopButton.classList.remove('opacity-100', 'visible');
+        backToTopButton.classList.add('opacity-0', 'invisible');
     }
-    document.body.appendChild(particles);
+});
+backToTopButton.addEventListener('click', function () {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+// Typing Effect
+const typingTextElement = document.querySelector('.typing-text');
+const roles = ['Full Stack Developer', 'Web Enthusiast'];
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typingDelay = 100;
+function type() {
+    const currentRole = roles[roleIndex];
+    if (isDeleting) {
+        typingTextElement.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+        typingDelay = 50;
+    } else {
+        typingTextElement.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+        typingDelay = 150;
+    }
+    if (!isDeleting && charIndex === currentRole.length) {
+        isDeleting = true;
+        typingDelay = 1000;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        typingDelay = 500;
+    }
+    setTimeout(type, typingDelay);
 }
-    });
-    // Active Nav Link on Scroll
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-link');
-    window.addEventListener('scroll', function () {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
-                current = section.getAttribute('id');
-            }
-        });
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    });
-    // Back to Top Button
-    const backToTopButton = document.querySelector('.back-to-top');
-    window.addEventListener('scroll', function () {
-        if (window.pageYOffset > 300) {
-            backToTopButton.classList.add('opacity-100', 'visible');
-            backToTopButton.classList.remove('opacity-0', 'invisible');
-        } else {
-            backToTopButton.classList.remove('opacity-100', 'visible');
-            backToTopButton.classList.add('opacity-0', 'invisible');
-        }
-    });
-    backToTopButton.addEventListener('click', function () {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-    // Typing Effect
-    const typingTextElement = document.querySelector('.typing-text');
-    const roles = ['Full Stack Developer', 'Web Enthusiast'];
-    let roleIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let typingDelay = 100;
-    function type() {
-        const currentRole = roles[roleIndex];
-        if (isDeleting) {
-            typingTextElement.textContent = currentRole.substring(0, charIndex - 1);
-            charIndex--;
-            typingDelay = 50;
-        } else {
-            typingTextElement.textContent = currentRole.substring(0, charIndex + 1);
-            charIndex++;
-            typingDelay = 150;
-        }
-        if (!isDeleting && charIndex === currentRole.length) {
-            isDeleting = true;
-            typingDelay = 1000;
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            roleIndex = (roleIndex + 1) % roles.length;
-            typingDelay = 500;
-        }
-        setTimeout(type, typingDelay);
-    }
-    setTimeout(type, 1000);
+setTimeout(type, 1000);
 
 document.addEventListener('DOMContentLoaded', function () {
     // About Tabs
@@ -224,5 +225,47 @@ document.addEventListener('DOMContentLoaded', function () {
         // Form validation and submission logic would go here
         alert('Thank you for your message! I will get back to you soon.');
         contactForm.reset();
+    });
+});
+
+
+// Certificate Modal Functionality
+document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById('certificateModal');
+    const modalImg = document.getElementById('modalCertificateImage');
+    const closeModal = document.getElementById('closeModal');
+    const viewButtons = document.querySelectorAll('.view-certificate');
+
+    // Open modal when view button is clicked
+    viewButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const certImage = this.getAttribute('data-certificate');
+            modalImg.src = certImage;
+            modal.classList.remove('invisible', 'opacity-0');
+            modal.classList.add('opacity-100');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    // Close modal
+    closeModal.addEventListener('click', function () {
+        modal.classList.remove('opacity-100');
+        modal.classList.add('opacity-0');
+        setTimeout(() => {
+            modal.classList.add('invisible');
+            document.body.style.overflow = '';
+        }, 300);
+    });
+
+    // Close when clicking outside image
+    modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('invisible');
+                document.body.style.overflow = '';
+            }, 300);
+        }
     });
 });

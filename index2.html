@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prerna Wagh</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Fade-in animation for sections */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-section {
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        /* Delay animations for each section */
+        .animate-section:nth-child(1) { animation-delay: 0.2s; }
+        .animate-section:nth-child(2) { animation-delay: 0.4s; }
+        .animate-section:nth-child(3) { animation-delay: 0.6s; }
+        .animate-section:nth-child(4) { animation-delay: 0.8s; }
+        .animate-section:nth-child(5) { animation-delay: 1s; }
+
+        /* Simplified theme toggle button */
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #4a5568;
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background-color: #2d3748;
+        }
+
+        .dark .theme-toggle {
+            background-color: #a0aec0;
+            color: #1a202c;
+        }
+
+        .dark .theme-toggle:hover {
+            background-color: #718096;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <nav class="bg-white dark:bg-gray-800 shadow-md fixed w-full z-10">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-900 dark:text-white">PrernaWagh</a>
+            <div class="space-x-6 hidden md:flex">
+                <a href="#home" class="hover:text-blue-600 dark:hover:text-blue-400">Home</a>
+                <a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400">About</a>
+                <a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
+                <a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
+            </div>
+            <div class="theme-toggle" onclick="toggleTheme()">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+        <div class="md:hidden container mx-auto px-6 py-4">
+            <div class="space-y-4 text-center">
+                <a href="#home" class="block hover:text-blue-600 dark:hover:text-blue-400">Home</a>
+                <a href="#about" class="block hover:text-blue-600 dark:hover:text-blue-400">About</a>
+                <a href="#projects" class="block hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
+                <a href="#contact" class="block hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 dark:from-blue-700 dark:to-purple-800 animate-section">
+        <div class="container mx-auto px-6 text-center text-white">
+            <div class="flex justify-center mb-6">
+                <img src="https://via.placeholder.com/150" alt="Profile" class="rounded-full w-32 h-32">
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold">Hello, I'm</h1>
+            <h2 class="text-3xl md:text-5xl font-semibold">Prerna Wagh</h2>
+            <h3 class="text-xl md:text-2xl mt-4">Full Stack Developer</h3>
+            <p class="mt-4 max-w-2xl mx-auto">Specialized in front-end as well as back-end technologies and have ability to turn ideas into reality.</p>
+            <div class="mt-6 space-x-4">
+                <a href="#contact" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-200 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600">Hire Me</a>
+                <a href="#projects" class="inline-block bg-transparent border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 dark:hover:bg-gray-700 dark:hover:text-white">View Work</a>
+            </div>
+            <div class="mt-8 flex justify-center space-x-6">
+                <a href="#" class="text-white hover:text-gray-200"><i class="fab fa-linkedin text-2xl"></i></a>
+                <a href="#" class="text-white hover:text-gray-200"><i class="fab fa-github text-2xl"></i></a>
+                <a href="#" class="text-white hover:text-gray-200"><i class="fab fa-twitter text-2xl"></i></a>
+                <a href="#" class="text-white hover:text-gray-200"><i class="fab fa-instagram text-2xl"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white dark:bg-gray-800 animate-section">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center">About Me</h2>
+            <div class="mt-8 max-w-3xl mx-auto text-center">
+                <p class="text-lg">I'm a passionate Full Stack Developer specializing in building dynamic and responsive web applications that combine great design with strong functionality. I'm committed to continuous learning and building solutions that make a real impact.</p>
+            </div>
+            <div class="mt-12">
+                <div class="flex justify-center space-x-4 mb-8">
+                    <button class="tab-btn active px-4 py-2 bg-blue-600 text-white rounded" data-tab="skills">Skills</button>
+                    <button class="tab-btn px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded" data-tab="journey">Journey</button>
+                    <button class="tab-btn px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded" data-tab="education">Education</button>
+                    <button class="tab-btn px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded" data-tab="values">Values</button>
+                </div>
+                <div id="skills" class="tab-content">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div>
+                            <h3 class="text-xl font-semibold">Frontend</h3>
+                            <div class="mt-4">
+                                <p>HTML/CSS</p>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <p>JavaScript</p>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <p>React</p>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">Backend</h3>
+                            <div class="mt-4">
+                                <p>Node.js</p>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <p>Python</p>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <p>Database</p>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">DevOps</h3>
+                            <div class="mt-4">
+                                <p>AWS</p>
+                                Perspective
+                                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <p>Docker</p>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                                    <div class="bg-blue-600ABLES
+
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="journey" class="tab-content hidden">
+                    <div class="max-w-2xl mx-auto">
+                        <h3 class="text-xl font-semibold">Software Developer</h3>
+                        <p class="mt-4">Government Polytechnic Nashik • 2025 - Present</p>
+                        <p>I'm an intern at Government Polytechnic Nashik where I learn about Django framework, AWS Practitioner, building a real-time online examination system for our college. This helps me to improve my skills and become expertise in tech field.</p>
+                    </div>
+                </div>
+                <div id="education" class="tab-content hidden">
+                    <div class="max-w-2xl mx-auto">
+                        <h3 class="text-xl font-semibold">Diploma in Information Technology</h3>
+                        <p class="mt-4">Government Polytechnic, Nashik</p>
+                        <p>2022 - 2025</p>
+                        <p>Specialized in Human-Computer Interaction and Web Technologies</p>
+                    </div>
+                </div>
+                <div id="values" class="tab-content hidden">
+                    <div class="max-w-2xl mx-auto">
+                        <h3 class="text-xl font-semibold">User-Centered</h3>
+                        <p class="mt-4">Putting users at the heart of every design decision</p>
+                        <h3 class="text-xl font-semibold mt-6">Innovation</h3>
+                        <p class="mt-4">Constantly exploring new technologies and approaches</p>
+                        <h3 class="text-xl font-semibold mt-6">Collaboration</h3>
+                        <p class="mt-4">Working together to achieve greater results</p>
+                        <h3 class="text-xl font-semibold mt-6">Excellence</h3>
+                        <p class="mt-4">Striving for the highest quality in everything I do</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 flex justify-center space-x-4">
+                <a href="#contact" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700">Contact Me</a>
+                <a href="#" class="inline-block bg-transparent border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-blue-600 hover:text-white dark:border-white dark:text-white">View Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <section id trucking="projects" class="py-20 bg-gray-100 dark:bg-gray-900 animate-section">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center">My Projects</h2>
+            <p class="mt-4 text-center max-w-2xl mx-auto">Here are some of my recent projects that showcase my skills and expertise in web development and design.</p>
+            <div class="flex justify-center space-x-4 mt-8">
+                <button class="filter-btn active px-4 py-2 bg-blue-600 text-white rounded" data-filter="all">All Projects</button>
+                <button class="filter-btn px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded" data-filter="web">Web Apps</button>
+                <button class="filter-btn px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded" data-filter="mobile">Mobile Apps</button>
+                <button class="filter-btn px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded" data-filter="uiux">UI/UX Design</button>
+            </div>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden">
+                    <div class="relative">
+                        <img src="https://via.placeholder.com/400x200" alt="Project Image" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="#" class="text-white font-semibold">View Details</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold">Expense Tracker System</h3>
+                        <p class="mt-2 text-gray-600 dark:text-gray-400">A simple and responsive web application designed to help users manage personal day-to-day expenses efficiently.</p>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-300">React.js, Chart.js, Django, SqLite</p>
+                    </div>
+                </div>
+                <div class="project-card bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden">
+                    <div class="relative">
+                        <img src="https://via.placeholder.com/400x200" alt="Project Image" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="#" class="text-white font-semibold">View Details</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold">Food Menu Site</h3>
+                        <p class="mt-2 text-gray-600 dark:text-gray-400">A simple site that authenticates users based on their roles and allows to add food items, delete them, and update them.</p>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-300">HTML/Tailwind CSS, Python, Django</p>
+                    </div>
+                </div>
+                <div class="project-card bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden">
+                    <div class="relative">
+                        <img src="https://via.placeholder.com/400x200" alt="Project Image" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="#" class="text-white font-semibold">View Details</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold">Portfolio Site</h3>
+                        <p class="mt-2 text-gray-600 dark:text-gray-400">An advanced portfolio site designed to showcase my skills, projects, and achievements.</p>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-300">HTML/CSS, Django, MySQL</p>
+                    </div>
+                </div>
+                <div class="project-card bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden">
+                    <div class="relative">
+                        <img src="https://via.placeholder.com/400x200" alt="Project Image" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="#" class="text-white font-semibold">View Details</a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold">Online Examination System</h3>
+                        <p class="mt-2 text-gray-600 dark:text-gray-400">A real-time online examination system with fully functional admin dashboard and student exam portal.</p>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-300">HTML/CSS, Django, MySQL</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="py-20 bg-white dark:bg-gray-800 animate-section">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center">Certifications</h2>
+            <p class="mt-4 text-center max-w-2xl mx-auto">Professional certifications that validate my skills and knowledge in various technologies and methodologies.</p>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                    <img src="https://via.placeholder.com/100" alt="Certificate" class="w-16 h-16 mb-4">
+                    <h3 class="text-xl font-semibold">AWS Certified Solutions Architect</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-400">Amazon Web Services</p>
+                    <p class="mt-2 text-gray-600 dark:text-gray-400">Issued Apr 2023 • Expires Apr 2026</p>
+                    <a href="#" class="mt-4 inline-block text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">Verify Certificate</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gray-100 dark:bg-gray-900 animate-section">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center">Get In Touch</h2>
+            <p class="mt-4 text-center max-w-2xl mx-auto">Feel free to contact me for any work or suggestions. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <form class="space-y-6">
+                        <input type="text" placeholder="Your Name" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100">
+                        <input type="email" placeholder="Your Email" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100">
+                        <input type="text" placeholder="Subject" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100">
+                        <textarea placeholder="Message" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 h-32"></textarea>
+                        <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-lg font-semibold hover:bg-blue-700">Send Message</button>
+                    </form>
+                </div>
+                <div class="space-y-6">
+                    <h3 class="text-xl font-semibold">Contact Information</h3>
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-map-marker-alt text-blue-600"></i>
+                        <div>
+                            <p class="font-semibold">Location</p>
+                            <p>Mannat Bunglow, Pune</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-envelope text-blue-600"></i>
+                        <div>
+                            <p class="font-semibold">Email</p>
+                            <p>prerna.wagh@example.com</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-phone text-blue-600"></i>
+                        <div>
+                            <p class="font-semibold">Phone</p>
+                            <p>+1 (415) 555-2671</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i class="fas fa-clock text-blue-600"></i>
+                        <div>
+                            <p class="font-semibold">Working Hours</p>
+                            <p>Monday - Friday: 9AM - 6PM</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold">Follow Me</h3>
+                        <div class="mt-4 flex space-x-4">
+                            <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-linkedin text-2xl"></i></a>
+                            <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-github text-2xl"></i></a>
+                            <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-twitter text-2xl"></i></a>
+                            <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-instagram text-2xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white dark:bg-gray-800 py-6">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center space-x-4 mb-4">
+                <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">PrernaWagh</a>
+                <a href="#home" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">Home</a>
+                <a href="#about" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">About</a>
+                <a href="#projects" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
+                <a href="#certifications" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">Certifications</a>
+                <a href="#contact" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400">© 2025 Prerna Wagh. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">Privacy Policy</a>
+                <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark');
+            const themeToggle = document.querySelector('.theme-toggle i');
+            themeToggle.classList.toggle('fa-moon');
+            themeToggle.classList.toggle('fa-sun');
+        }
+
+        // Tab functionality
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                tabButtons.forEach(btn => btn.classList.remove('active', 'bg-blue-600', 'text-white'));
+                tabButtons.forEach(btn => btn.classList.add('bg-gray-200', 'dark:bg-gray-700'));
+                button.classList.add('active', 'bg-blue-600', 'text-white');
+                button.classList.remove('bg-gray-200', 'dark:bg-gray-700');
+
+                tabContents.forEach(content => content.classList.add('hidden'));
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.remove('hidden');
+            });
+        });
+
+        // Project filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active', 'bg-blue-600', 'text-white'));
+                filterButtons.forEach(btn => btn.classList.add('bg-gray-200', 'dark:bg-gray-700'));
+                button.classList.add('active', 'bg-blue-600', 'text-white');
+                button.classList.remove('bg-gray-200', 'dark:bg-gray-700');
+
+                const filter = button.getAttribute('data-filter');
+                projectCards.forEach(card => {
+                    card.classList.remove('hidden');
+                    if (filter !== 'all' && !card.classList.contains(filter)) {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
