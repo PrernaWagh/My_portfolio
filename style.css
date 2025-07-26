@@ -278,37 +278,7 @@ h3,
     margin: 0 auto;
     padding: 0 20px;
 }
-.navbar-menu.md\:hidden {
-    position: fixed;
-    top: 70px; /* Match your navbar height */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%; /* Adjust this to control width */
-    max-width: 300px; /* Maximum width */
-    background: var(--navbar-bg);
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    overflow: hidden;
-    z-index: 999;
-}
 
-.navbar-menu.md\:hidden .container {
-    padding: 0; /* Remove container padding */
-}
-
-.navbar-menu.md\:hidden .nav-link {
-    padding: 12px 20px; /* Consistent padding */
-    text-align: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.dark-mode .navbar-menu.md\:hidden .nav-link {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.navbar-menu.md\:hidden .nav-link:last-child {
-    border-bottom: none;
-}
 .navbar {
     position: fixed;
     top: 0;
