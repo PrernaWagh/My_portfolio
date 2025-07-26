@@ -17,7 +17,19 @@ menuToggle.addEventListener('click', function () {
         icon.classList.add('ri-menu-line');
     }
 });
-
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 90,
+behavior: 'smooth'
+});
+}});
+});
 // Close mobile menu when clicking a nav link
 document.querySelectorAll('.navbar-menu .nav-link').forEach(link => {
     link.addEventListener('click', () => {
@@ -37,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Add/remove particles based on dark mode
         if (document.body.classList.contains('dark-mode')) {
-            themeSwitchHandle.innerHTML = '<i class="ri-moon-line ri-sm"></i>';
+            themeSwitchHandle.innerHTML = '<i class="ri-moon-fill ri-lg"></i>';
             // Create particles
             const particles = document.createElement('div');
             particles.className = 'floating-particles';
@@ -46,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             document.body.appendChild(particles);
         } else {
-            themeSwitchHandle.innerHTML = '<i class="ri-sun-line ri-sm"></i>';
+            themeSwitchHandle.innerHTML = '<i class="ri-sun-fill ri-lg"></i>';
             // Remove particles
             const particles = document.querySelector('.floating-particles');
             if (particles) {
@@ -61,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Check for saved theme preference on page load
     if (localStorage.getItem('darkMode') === 'true') {
         document.body.classList.add('dark-mode');
-        themeSwitchHandle.innerHTML = '<i class="ri-moon-line ri-sm"></i>';
+        themeSwitchHandle.innerHTML = '<i class="ri-moon-line ri-lg"></i>';
         // Create particles if dark mode is enabled
         const particles = document.createElement('div');
         particles.className = 'floating-particles';
@@ -257,5 +269,12 @@ modal.addEventListener('click', (e) => {
         modal.classList.remove('active');
         document.body.style.overflow = '';
     }
+    
     });
+});
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 });

@@ -6,7 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prerna Wagh - Portfolio</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { primary: '#ff6b6b', secondary: '#6c63ff' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#ff6b6b', secondary: '#6c63ff' }, borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+ } } } }</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -31,13 +42,14 @@
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#projects" class="nav-link">Projects</a>
+                <a href="#certifications" class="nav-link">Certifications</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
 
             <!-- Theme Toggle -->
             <div class="theme-switch ml-4">
                 <div class="theme-switch-handle">
-                    <i class="fas fa-moon"></i>
+                    <i class="ri-sun-fill ri-lg"></i>
                 </div>
             </div>
             <!-- Mobile Menu Toggle -->
@@ -47,11 +59,12 @@
         </div>
 
         <!-- Mobile Menu (hidden by default) -->
-        <div class="navbar-menu md:hidden absolute mt-2 p-4 rounded-md z-10">
+        <div class="navbar-menu md:hidden absolute mt-0 p-4 rounded-md z-10">
             <div class="container py-4">
                 <a href="#home" class="nav-link block py-2">Home</a>
                 <a href="#about" class="nav-link block py-2">About</a>
                 <a href="#projects" class="nav-link block py-2">Projects</a>
+                <a href="#certifications" class="nav-link">Certifications</a>
                 <a href="#contact" class="nav-link block py-2">Contact</a>
             </div>
         </div>
