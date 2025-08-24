@@ -18,6 +18,8 @@
         
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
         
         body {
@@ -87,6 +89,7 @@
         
         .section {
             margin-bottom: 20px;
+            page-break-inside: avoid;
         }
         
         .job, .project, .education-item {
@@ -122,7 +125,11 @@
         @media (min-width: 480px) {
             .date {
                 margin-top: 0;
-            }
+            text-align: right;
+            min-width: 120px;
+            margin-left: 10px;
+            white-space: nowrap;
+        }
         }
         
         ul {
@@ -218,6 +225,10 @@
             
             .contact-info {
                 font-size: 10pt;
+            }
+            
+            .section {
+                page-break-inside: avoid;
             }
         }
         
@@ -493,7 +504,7 @@
                         actionButtons.style.display = 'flex';
                         window.print();
                     });
-            }, 200);
+            }, 500);
         }
     </script>
 </body>
