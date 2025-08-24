@@ -12,8 +12,6 @@
             --secondary-text: #666;
             --light-bg: #f8f8f8;
             --border-color: #ddd;
-            --skill-bar-bg: #f0f0f0;
-            --skill-bar-fill: #555;
             --tag-bg: #f0f0f0;
             --action-btn-bg: #555;
         }
@@ -155,28 +153,22 @@
             min-width: 0;
         }
         
-        .skill {
+        .skill-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .skill-list li {
+            position: relative;
+            padding-left: 15px;
             margin-bottom: 8px;
         }
         
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 3px;
-            font-size: clamp(13px, 3vw, 14px);
-        }
-        
-        .skill-bar {
-            height: 8px;
-            background: var(--skill-bar-bg);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        
-        .skill-level {
-            height: 100%;
-            background: var(--skill-bar-fill);
-            border-radius: 4px;
+        .skill-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-text);
         }
         
         .project-tags {
@@ -355,6 +347,7 @@
                 </div>
             </div>
         </div>
+
         <!-- Experience -->
         <div class="section">
             <h2>EXPERIENCE</h2>
