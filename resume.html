@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prerna Wagh - Resume</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
+
         :root {
             --primary-text: #222;
             --secondary-text: #666;
@@ -15,13 +16,13 @@
             --tag-bg: #f0f0f0;
             --action-btn-bg: #555;
         }
-        
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.5;
@@ -31,25 +32,27 @@
             margin: 0;
             -webkit-text-size-adjust: 100%;
         }
-        
+
         .resume-container {
             max-width: 800px;
             margin: 20px auto;
             padding: 30px;
             background: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        
-        h1, h2, h3 {
+
+        h1,
+        h2,
+        h3 {
             color: var(--primary-text);
             margin-top: 0;
         }
-        
+
         h1 {
             font-size: clamp(24px, 5vw, 28px);
             margin-bottom: 5px;
         }
-        
+
         h2 {
             font-size: clamp(18px, 4vw, 20px);
             border-bottom: 1px solid var(--border-color);
@@ -57,17 +60,17 @@
             margin-top: 25px;
             margin-bottom: 15px;
         }
-        
+
         h3 {
             font-size: clamp(16px, 4vw, 18px);
             margin-bottom: 5px;
         }
-        
+
         .header {
             text-align: center;
             margin-bottom: 25px;
         }
-        
+
         .contact-info {
             display: flex;
             justify-content: center;
@@ -76,115 +79,122 @@
             margin-top: 10px;
             font-size: clamp(12px, 3vw, 14px);
         }
-        
+
         .contact-info span {
             display: flex;
             align-items: center;
             white-space: nowrap;
         }
-        
+
         .contact-info i {
             margin-right: 5px;
         }
-        
+
         .section {
             margin-bottom: 20px;
             page-break-inside: avoid;
         }
-        
-        .job, .project, .education-item {
+
+        .job,
+        .project,
+        .education-item {
             margin-bottom: 15px;
         }
-        
-        .job-header, .education-header {
+
+        .job-header,
+        .education-header {
             display: flex;
             flex-direction: column;
             margin-bottom: 5px;
         }
-        
+
         @media (min-width: 480px) {
-            .job-header, .education-header {
+
+            .job-header,
+            .education-header {
                 flex-direction: row;
                 justify-content: space-between;
             }
         }
-        
-        .job-title, .degree {
+
+        .job-title,
+        .degree {
             font-weight: 600;
         }
-        
-        .company, .school {
+
+        .company,
+        .school {
             font-style: italic;
         }
-        
+
         .date {
             color: var(--secondary-text);
             margin-top: 3px;
         }
-        
+
         @media (min-width: 480px) {
             .date {
                 margin-top: 0;
-            text-align: right;
-            min-width: 120px;
-            margin-left: 10px;
-            white-space: nowrap;
+                text-align: right;
+                min-width: 120px;
+                margin-left: 10px;
+                white-space: nowrap;
+            }
         }
-        }
-        
+
         ul {
             padding-left: 20px;
             margin-top: 5px;
             margin-bottom: 0;
         }
-        
+
         li {
             margin-bottom: 5px;
         }
-        
+
         .skills {
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
-        
+
         @media (min-width: 600px) {
             .skills {
                 flex-direction: row;
                 flex-wrap: wrap;
             }
         }
-        
+
         .skill-category {
             flex: 1;
             min-width: 0;
         }
-        
+
         .skill-list {
             list-style-type: none;
             padding-left: 0;
         }
-        
+
         .skill-list li {
             position: relative;
             padding-left: 15px;
             margin-bottom: 8px;
         }
-        
+
         .skill-list li:before {
             content: "•";
             position: absolute;
             left: 0;
             color: var(--secondary-text);
         }
-        
+
         .project-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 5px;
             margin-top: 5px;
         }
-        
+
         .tag {
             background: var(--tag-bg);
             padding: 2px 8px;
@@ -192,46 +202,46 @@
             font-size: 12px;
             white-space: nowrap;
         }
-        
+
         @media print {
             body {
                 background: none;
                 padding: 0;
                 font-size: 12pt;
             }
-            
+
             .resume-container {
                 box-shadow: none;
                 padding: 20px;
                 max-width: 100%;
                 margin: 0;
             }
-            
+
             .no-print {
                 display: none !important;
             }
-            
+
             h1 {
                 font-size: 20pt;
             }
-            
+
             h2 {
                 font-size: 16pt;
             }
-            
+
             h3 {
                 font-size: 14pt;
             }
-            
+
             .contact-info {
                 font-size: 10pt;
             }
-            
+
             .section {
                 page-break-inside: avoid;
             }
         }
-        
+
         /* Floating action buttons */
         .action-buttons {
             position: fixed;
@@ -242,13 +252,13 @@
             gap: 10px;
             z-index: 100;
         }
-        
+
         @media (min-width: 768px) {
             .action-buttons {
                 flex-direction: row;
             }
         }
-        
+
         .action-btn {
             width: 45px;
             height: 45px;
@@ -259,29 +269,29 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
             border: none;
             font-size: 18px;
         }
-        
+
         .action-btn:hover {
             background: #333;
             transform: translateY(-2px);
         }
-        
+
         /* Mobile-specific adjustments */
         @media (max-width: 600px) {
             .resume-container {
                 padding: 20px 15px;
                 margin: 10px;
             }
-            
+
             .contact-info {
                 gap: 8px 12px;
                 justify-content: flex-start;
             }
-            
+
             .section {
                 margin-bottom: 15px;
             }
@@ -289,6 +299,7 @@
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 </head>
+
 <body>
     <div class="resume-container">
         <!-- Header -->
@@ -308,8 +319,10 @@
         <div class="section">
             <h2>SUMMARY</h2>
             <p>
-                Passionate Full Stack Developer specializing in building dynamic and responsive web applications that combine great design with strong functionality. 
-                Experienced in front-end and back-end technologies with a commitment to continuous learning and building impactful solutions.
+                Passionate Full Stack Developer specializing in building dynamic and responsive web applications that
+                combine great design with strong functionality.
+                Experienced in front-end and back-end technologies with a commitment to continuous learning and building
+                impactful solutions.
             </p>
         </div>
 
@@ -327,7 +340,7 @@
                         <li>Tailwind CSS</li>
                     </ul>
                 </div>
-                
+
                 <!-- Backend Skills -->
                 <div class="skill-category">
                     <h3>Backend</h3>
@@ -346,7 +359,7 @@
                         <li>MySQL</li>
                     </ul>
                 </div>
-                
+
                 <!-- Programming Languages -->
                 <div class="skill-category">
                     <h3>Programming Languages</h3>
@@ -365,7 +378,7 @@
             <div class="job">
                 <div class="job-header">
                     <div>
-                        <span class="job-title">Software Developer Intern</span> - 
+                        <span class="job-title">Software Developer Intern</span> -
                         <span class="company">Government Polytechnic Nashik</span>
                     </div>
                     <div class="date">2025 - Present</div>
@@ -383,17 +396,19 @@
             <h2>PROJECTS</h2>
             <div class="project">
                 <h3>Expense Tracker System</h3>
-                <p>A simple and responsive web application designed to help users manage personal day-to-day expenses efficiently.</p>
+                <p>A simple and responsive web application designed to help users manage personal day-to-day expenses
+                    efficiently.</p>
                 <div class="project-tags">
                     <span class="tag">HTML/Tailwind CSS</span>
                     <span class="tag">Django</span>
                     <span class="tag">SqLite</span>
                 </div>
             </div>
-            
+
             <div class="project">
                 <h3>Online Examination System</h3>
-                <p>A real time online examination system with fully functional admin dashboard and student exam portal.</p>
+                <p>A real time online examination system with fully functional admin dashboard and student exam portal.
+                </p>
                 <div class="project-tags">
                     <span class="tag">HTML/CSS</span>
                     <span class="tag">Django</span>
@@ -408,7 +423,7 @@
             <div class="education-item">
                 <div class="education-header">
                     <div>
-                        <span class="degree">Diploma in Information Technology</span> - 
+                        <span class="degree">Diploma in Information Technology</span> -
                         <span class="school">Government Polytechnic, Nashik</span>
                     </div>
                     <div class="date">2022 - 2025</div>
@@ -449,44 +464,48 @@
             <i class="ri-close-line"></i>
         </button>
     </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script>
         function generatePDF() {
             const element = document.querySelector('.resume-container');
             const actionButtons = document.querySelector('.action-buttons');
-            
+
             // Hide action buttons before capture
             actionButtons.style.display = 'none';
-            
+
             // Scroll to top to ensure we capture everything
             window.scrollTo(0, 0);
-            
+
+            // Create a clone of the element to avoid affecting the original
+            const elementClone = element.cloneNode(true);
+            document.body.appendChild(elementClone);
+            elementClone.style.position = 'absolute';
+            elementClone.style.left = '-9999px';
+
             const opt = {
-                margin: [10, 10, 10, 10],
+                margin: [15, 15, 15, 15],
                 filename: 'PrernaWagh-Resume.pdf',
-                image: { 
-                    type: 'jpeg', 
-                    quality: 0.98 
+                image: {
+                    type: 'jpeg',
+                    quality: 0.98
                 },
-                html2canvas: { 
+                html2canvas: {
                     scale: 2,
-                    letterRendering: true,
                     useCORS: true,
+                    logging: false,
                     scrollX: 0,
-                    scrollY: 0,
-                    windowWidth: document.documentElement.scrollWidth,
-                    windowHeight: document.documentElement.scrollHeight
+                    scrollY: 0
                 },
-                jsPDF: { 
-                    unit: 'mm', 
-                    format: 'a4', 
-                    orientation: 'portrait',
-                    compressPDF: true
+                jsPDF: {
+                    unit: 'mm',
+                    format: 'a4',
+                    orientation: 'portrait'
                 },
-                pagebreak: { 
+                pagebreak: {
                     mode: ['avoid-all', 'css', 'legacy'],
-                    before: '.section' 
+                    before: '.section',
+                    after: '.section',
+                    avoid: '.skill-list, .project-tags, ul, ol'
                 }
             };
 
@@ -494,18 +513,22 @@
             setTimeout(() => {
                 html2pdf()
                     .set(opt)
-                    .from(element)
+                    .from(elementClone)
                     .save()
                     .then(() => {
+                        document.body.removeChild(elementClone);
                         actionButtons.style.display = 'flex';
                     })
                     .catch(err => {
                         console.error('Error generating PDF:', err);
+                        document.body.removeChild(elementClone);
                         actionButtons.style.display = 'flex';
+                        // Fallback to browser print
                         window.print();
                     });
-            }, 500);
+            }, 800);
         }
     </script>
 </body>
+
 </html>
